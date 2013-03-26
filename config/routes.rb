@@ -1,5 +1,8 @@
 MiniBlog::Application.routes.draw do
-  resources :blogs
+
+  resources :blogs, format: 'html'
+
+  root to: redirect('/blogs')
 
 
   # The priority is based upon order of creation:
