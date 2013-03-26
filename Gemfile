@@ -26,6 +26,10 @@ group :development do
   gem 'better_errors'
 end
 
+group :test do
+  gem 'test-unit'
+end
+
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 
