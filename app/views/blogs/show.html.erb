@@ -1,15 +1,7 @@
 <p id="notice"><%= notice %></p>
-
-<p>
-  <b>Title:</b>
-  <%= @blog.title %>
-</p>
-
-<p>
-  <b>Body:</b>
-  <%= @blog.body %>
-</p>
-
-
-<%= link_to 'Edit', edit_blog_path(@blog) %> |
-<%= link_to 'Back', blogs_path %>
+<article>
+  <h2><%= @blog.title %></h2>
+  <section><%= replace_br @blog.body %></section>
+  <aside><%= Blog.human_attribute_name(:updated_at) %>: <%= I18n.localize(@blog.updated_at)%></aside>
+  <%= link_to t('.edit'), edit_blog_path(@blog) %>
+</article>

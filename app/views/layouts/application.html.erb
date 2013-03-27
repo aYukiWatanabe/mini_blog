@@ -1,14 +1,15 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>MiniBlog</title>
-  <%= stylesheet_link_tag    "application", :media => "all" %>
-  <%= javascript_include_tag "application" %>
+  <meta charset="utf-8">
+  <title>Mini Blog</title>
+  <%= stylesheet_link_tag 'application' %>
   <%= csrf_meta_tags %>
-</head>
+  <%= yield :head %>
 <body>
-
-<%= yield %>
-
-</body>
-</html>
+  <div id="wrapper">
+    <h1><a href="/">Mini Blog</a></h1>
+    <%= yield %>
+    <%= javascript_include_tag 'application' %>
+    <%= yield :foot %>
+  </div>

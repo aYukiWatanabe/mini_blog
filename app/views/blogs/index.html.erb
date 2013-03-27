@@ -1,25 +1,20 @@
-<h1>Listing blogs</h1>
+<nav>
+  <ul>
+    <li><%= link_to t('.new'), new_blog_path %>
+  </ul>
+</nav>
 
-<table>
-  <tr>
-    <th>Title</th>
-    <th>Body</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
-<% @blogs.each do |blog| %>
-  <tr>
-    <td><%= blog.title %></td>
-    <td><%= blog.body %></td>
-    <td><%= link_to 'Show', blog %></td>
-    <td><%= link_to 'Edit', edit_blog_path(blog) %></td>
-    <td><%= link_to 'Destroy', blog, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
-<% end %>
-</table>
-
-<br />
-
-<%= link_to 'New Blog', new_blog_path %>
+<main>
+  <% if @blogs.size == 0 %>
+    <p>No Content
+  <% else %>
+    <% @blogs.each do |blog| %>
+      <article>
+        <h2><%= blog.title %></h2>
+        <section><%= replace_br blog.body %></section>
+        <aside><%= Blog.human_attribute_name(:updated_at) %>: <%= I18n.localize(blog.updated_at)%></aside>
+        <div><%= link_to t('.continue'), blog_path(blog) %>
+      </article>
+    <% end %>
+  <% end %>
+</main>
