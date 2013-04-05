@@ -4,6 +4,7 @@ gem 'rails', '3.2.13'
 
 gem 'jquery-rails'
 gem 'rails-i18n'
+gem 'rspec-rails'
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
@@ -18,10 +19,13 @@ end
 
 group :development do
   gem 'better_errors'
+  gem 'pry-rails'
 end
 
 group :test do
-  gem 'test-unit'
+  gem 'simplecov'
+  gem 'capybara'
+  gem 'database_cleaner'
 end
 
 group :development, :test do
