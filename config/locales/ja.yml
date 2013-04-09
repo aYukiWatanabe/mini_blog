@@ -5,4 +5,9 @@ ja:
       continue: 続きを読む
     show:
       edit: 記事を編集する
-
+      delete: 削除する
+    comments:
+      edit: 編集する
+      delete: 削除する
+      anonymous: 誰か
+      said: '%{name}の発言:'

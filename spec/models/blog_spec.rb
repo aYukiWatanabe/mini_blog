@@ -14,5 +14,19 @@ describe Blog do
       }.to raise_error(ActiveRecord::RecordInvalid)
     end
   end
-end
 
+  describe '#comments' do
+    before { @blog = Blog.create! title: 'Hello everyone' }
+    subject { @blog }
+
+    context 'if no comment exist' do
+      it { should have(0).comments }
+    end
+
+    it 'should create comment instance' do
+      expect {
+        @blog.comments.create! name: 'Taro'
+      }.to change{ @blog.comments.count }.by(1)
+    end
+  end
+end

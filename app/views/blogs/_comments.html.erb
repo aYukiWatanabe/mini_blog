@@ -1,0 +1,21 @@
+<section class="comments">
+  <h3><%= Comment.model_name.human %></h3>
+  <% comments.each do |com| %>
+    <% if com.id != @comment.try(:id) %>
+      <section class="comment">
+        <div class="name"><%= t('.said', name: (com.name.presence || t('.anonymous'))) %></div>
+        <div class="body"><%= com.body %></div>
+        <div class="links">
+          <%= link_to t('.edit'), edit_blog_comment_path(@blog, com), class: 'edit-link' %>
+          <%= link_to t('.delete'), blog_comment_path(@blog, com), method: 'delete', class: 'delete-link' %>
+        </div>
+      </section>
+    <% else %>
+      <%= render partial: 'blogs/comment_form' %>
+    <% end %>
+  <% end %>
+  <% if @comment == nil || @comment.new_record? %>
+    <hr>
+    <%= render partial: 'blogs/comment_form' %>
+  <% end %>
+</section>

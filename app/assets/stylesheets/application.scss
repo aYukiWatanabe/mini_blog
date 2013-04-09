@@ -61,6 +61,29 @@ article {
     text-align: right;
     font-size: 80%;
   }
+  .comment {
+    position: relative;
+    border: solid 1px transparent;
+    padding: 5px;
+
+    &:hover {
+      background-color: #ffe;
+      border-color: #eed;
+    }
+    &>.links  {
+      display: none;
+      &>a { display: block; }
+    }
+    &:hover>.links {
+      display: block;
+      position: absolute;
+      top: 2px;
+      right: 2px;
+    }
+    &>.body {
+      margin-left: 20px;
+    }
+  }
 }
 form {
   .field {
@@ -69,6 +92,10 @@ form {
   }
   .actions {
     text-align: right;
+  }
+
+  .comments & {
+    textarea { height: 50px; }
   }
 }
 #error_explanation {

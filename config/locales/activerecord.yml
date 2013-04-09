@@ -2,9 +2,13 @@ ja:
   activerecord:
     models:
       blog: 記事
+      comment: コメント
     attributes:
       blog:
         title: タイトル
         body: 本文
         created_at: 作成日時
         updated_at: 更新日時
+      comment:
+        name: 投稿者
+        body: 本文
