@@ -25,7 +25,7 @@ class BlogsController < ApplicationController
     redirect_to action: 'index'
   rescue ActiveRecord::RecordInvalid => e
     @blog = e.record
-    render 'new'
+    render 'new', status: 400
   end
 
   def update
@@ -34,7 +34,7 @@ class BlogsController < ApplicationController
     redirect_to action: 'show'
   rescue ActiveRecord::RecordInvalid => e
     @blog = e.record
-    render 'edit'
+    render 'edit', status: 400
   end
 
   def destroy

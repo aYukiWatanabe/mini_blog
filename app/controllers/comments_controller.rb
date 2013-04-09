@@ -7,7 +7,7 @@ class CommentsController < ApplicationController
   rescue ActiveRecord::RecordInvalid => e
     @comment = e.record
     @blog = @comment.blog
-    render 'blogs/show'
+    render 'blogs/show', status: 400
   end
 
   def edit
@@ -24,7 +24,7 @@ class CommentsController < ApplicationController
   rescue ActiveRecord::RecordInvalid => e
     @comment = e.record
     @blog = @comment.blog
-    render 'blogs/show'
+    render 'blogs/show', status: 400
   end
 
   def destroy

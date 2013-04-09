@@ -44,6 +44,17 @@ describe 'Page /blogs' do
         current_path.should == '/blogs'
       }.to change { Blog.count }.by(1)
     end
+
+    it 'should NOT create new post without title' do
+      expect {
+        visit '/blogs/new'
+        first('#error_explanation').should be_nil
+        fill_in 'blog[body]',  with: 'body text'
+        find('input[type=submit]').click
+        current_path.should == '/blogs'
+      }.not_to change { Blog.count }
+      first('#error_explanation').should_not be_nil
+    end
   end
 
   describe './:blog_id/edit' do
