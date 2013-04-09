@@ -25,7 +25,7 @@ describe Blog do
 
     it 'should create comment instance' do
       expect {
-        @blog.comments.create! name: 'Taro'
+        @blog.comments.create! body: 'Hello'
       }.to change{ @blog.comments.count }.by(1)
     end
   end

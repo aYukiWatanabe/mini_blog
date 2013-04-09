@@ -4,7 +4,7 @@
     <% if com.id != @comment.try(:id) %>
       <section class="comment">
         <div class="name"><%= t('.said', name: (com.name.presence || t('.anonymous'))) %></div>
-        <div class="body"><%= com.body %></div>
+        <div class="body"><%= replace_br com.body %></div>
         <div class="links">
           <%= link_to t('.edit'), edit_blog_comment_path(@blog, com), class: 'edit-link' %>
           <%= link_to t('.delete'), blog_comment_path(@blog, com), method: 'delete', class: 'delete-link' %>

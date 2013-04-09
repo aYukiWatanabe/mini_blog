@@ -1,7 +1,7 @@
 <p id="notice"><%= notice %></p>
-<article>
-  <h2><%= @blog.title %></h2>
-  <section><%= replace_br @blog.body %></section>
+<article class="blog">
+  <h2 class="title"><%= @blog.title %></h2>
+  <section class="body"><%= replace_br @blog.body %></section>
   <aside><%= Blog.human_attribute_name(:updated_at) %>: <%= I18n.localize(@blog.updated_at)%></aside>
   <%= link_to t('.edit'), edit_blog_path(@blog) %> | <%= link_to t('.delete'), blog_path(@blog), method: 'delete' %>
   <%= render partial: 'blogs/comments', locals: { comments: @blog.comments } %>

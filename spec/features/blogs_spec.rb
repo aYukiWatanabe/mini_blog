@@ -24,8 +24,8 @@ describe 'Page /blogs' do
 
     it 'should show title and body' do
       visit "/blogs/#{@blog.id}"
-      find(:css, 'article h2').text.should == 'test-blog-title'
-      find(:css, 'article section').text.should == 'test-blog-body'
+      find(:css, '.blog>.title').text.should == 'test-blog-title'
+      find(:css, '.blog>.body').text.should == 'test-blog-body'
     end
 
     specify 'edit-post-link should be exist' do

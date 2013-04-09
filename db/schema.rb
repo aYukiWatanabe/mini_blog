@@ -22,8 +22,8 @@ ActiveRecord::Schema.define(:version => 20130409002057) do
 
   create_table "comments", :force => true do |t|
     t.integer  "blog_id"
-    t.string   "name",       :null => false
-    t.text     "body"
+    t.string   "name"
+    t.text     "body",       :null => false
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
