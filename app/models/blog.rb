@@ -4,5 +4,5 @@ class Blog < ActiveRecord::Base
   validates :title, presence: true
 
   # ----- ----- ----- ----- assocs ----- ----- ----- -----
-  has_many :comments, dependent: :destroy
+  has_many :comments, order: 'created_at ASC', dependent: :destroy
 end
