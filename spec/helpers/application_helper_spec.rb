@@ -10,7 +10,7 @@ describe ApplicationHelper do
   describe '#error_message' do
     before { @blog = Blog.create }
     around { |test| using_locale(:en, &test) }
-    specify { error_message(@blog).should == '1 error prohibited this Blog from being saved' }
+    specify { error_message(@blog).should == '2 errors prohibited this Blog from being saved' }
   end
 
   def using_locale(locale)

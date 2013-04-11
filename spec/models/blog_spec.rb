@@ -16,7 +16,7 @@ describe Blog do
   end
 
   describe '#comments' do
-    before { @blog = Blog.create! title: 'Hello everyone' }
+    before { @blog = Blog.create! title: 'Hello everyone', body: 'Body' }
     subject { @blog }
 
     context 'if no comment exist' do

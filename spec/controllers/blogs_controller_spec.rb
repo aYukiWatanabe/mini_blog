@@ -7,7 +7,7 @@ describe BlogsController do
   end
 
   describe '#show' do
-    before { @blog = Blog.create!(title: 'title') }
+    before { @blog = Blog.create!(title: 'title', body: 'body') }
     subject { get :show, id: @blog.id }
     it { should render_template(:show) }
   end
@@ -18,7 +18,7 @@ describe BlogsController do
   end
 
   describe '#edit' do
-    before { @blog = Blog.create!(title: 'title') }
+    before { @blog = Blog.create!(title: 'title', body: 'body') }
     subject { get :edit, id: @blog.id }
     it { should render_template(:edit) }
   end
@@ -26,7 +26,7 @@ describe BlogsController do
   describe '#create' do
     it 'should create' do
       expect {
-        post :create, blog: { title: 'title' }
+        post :create, blog: { title: 'title', body: 'body' }
       }.to change { Blog.count }.by(1)
       response.should redirect_to(action: :index)
     end
@@ -40,7 +40,7 @@ describe BlogsController do
   end
 
   describe '#update' do
-    before { @blog = Blog.create!(title: 'title') }
+    before { @blog = Blog.create!(title: 'title', body: 'body') }
 
     it 'should update' do
       expect {
@@ -58,7 +58,7 @@ describe BlogsController do
   end
 
   describe '#destroy' do
-    before { @blog = Blog.create!(title: 'title') }
+    before { @blog = Blog.create!(title: 'title', body: 'body') }
 
     it 'should destroy' do
       expect {

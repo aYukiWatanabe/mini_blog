@@ -23,7 +23,7 @@ describe Comment do
     end
 
     it 'should be assigned by association' do
-      blog = Blog.create! title: 'New post'
+      blog = Blog.create! title: 'New post', body: 'Body'
       comment = nil
       expect {
         comment = blog.comments.create! body: 'Hello'

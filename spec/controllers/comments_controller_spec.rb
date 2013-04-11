@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 describe CommentsController do
-  before { @blog = Blog.create!(title: 'title') }
+  before { @blog = Blog.create!(title: 'title', body: 'body') }
 
   describe '#create' do
     it 'should create' do
@@ -21,7 +21,7 @@ describe CommentsController do
 
   describe '#edit' do
     before do
-      @blog = Blog.create!(title: 'title')
+      @blog = Blog.create!(title: 'title', body: 'body')
       @comment = @blog.comments.create!(name: 'name', body: "body")
     end
     subject { get :edit, blog_id: @blog.id, id: @comment.id }
