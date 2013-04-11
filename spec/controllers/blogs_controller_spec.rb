@@ -46,7 +46,7 @@ describe BlogsController do
       expect {
         post :update, id: @blog.id, blog: { title: 'new-title' }
       }.to change { @blog.reload.title }.from('title').to('new-title')
-      response.should redirect_to(blog_url(assigns(:blog)))
+      response.should redirect_to blog_path(@blog.id)
     end
 
     it 'should fail, if title is blank' do

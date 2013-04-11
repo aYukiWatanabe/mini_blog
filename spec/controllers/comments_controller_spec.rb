@@ -8,7 +8,7 @@ describe CommentsController do
       expect {
         post :create, blog_id: @blog.id, comment: { body: 'body' }
       }.to change { @blog.comments.count }.by(1)
-      response.should redirect_to(blog_url(@blog))
+      response.should redirect_to blog_path(@blog.id)
     end
 
     it 'should fail' do
@@ -20,10 +20,10 @@ describe CommentsController do
   end
 
   describe '#edit' do
-    before {
+    before do
       @blog = Blog.create!(title: 'title')
       @comment = @blog.comments.create!(name: 'name', body: "body")
-    }
+    end
     subject { get :edit, blog_id: @blog.id, id: @comment.id }
     it { should render_template('blogs/show') }
   end
