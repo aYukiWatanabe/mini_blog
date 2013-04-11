@@ -24,8 +24,6 @@ end
 
 group :test do
   gem 'simplecov'
-  gem 'capybara'
-  gem 'database_cleaner'
 end
 
 group :development, :test do
