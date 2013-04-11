@@ -3,8 +3,8 @@ MiniBlog::Application.routes.draw do
 
   scope format: 'html' do
 
-    # mount proc { [200, {'Content-Type' => 'text/plain'}, ['Hello, world']] } => 'greet'
-    # get 'greet' => 'greeting#hello_world'
+    # mount proc { [200, {'Content-Type' => 'text/plain'}, ['Hello, world']] } => 'hello_world'
+    # get 'hello_world' => 'greeting#hello_world'
 
     resources :blogs do
       resources :comments, only: [:create, :edit, :update, :destroy]
