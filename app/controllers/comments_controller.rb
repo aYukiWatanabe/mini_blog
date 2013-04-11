@@ -1,36 +1,18 @@
 class CommentsController < ApplicationController
 
   def create
-    blog = Blog.find(params[:blog_id])
-    blog.comments.create!(params[:comment])
-    redirect_to blog_path(blog)
-  rescue ActiveRecord::RecordInvalid => e
-    @comment = e.record
-    @blog = @comment.blog
-    render 'blogs/show', status: 400
+    raise NotImplementedError
   end
 
   def edit
-    @blog = Blog.find(params[:blog_id])
-    @comment = @blog.comments.find(params[:id])
-    render 'blogs/show'
+    raise NotImplementedError
   end
 
   def update
-    blog = Blog.find(params[:blog_id])
-    comment = blog.comments.find(params[:id])
-    comment.update_attributes!(params[:comment])
-    redirect_to blog_path(blog)
-  rescue ActiveRecord::RecordInvalid => e
-    @comment = e.record
-    @blog = @comment.blog
-    render 'blogs/show', status: 400
+    raise NotImplementedError
   end
 
   def destroy
-    blog = Blog.find(params[:blog_id])
-    comment = blog.comments.find(params[:id])
-    comment.destroy
-    redirect_to blog_path(blog)
+    raise NotImplementedError
   end
 end

@@ -1,4 +1,5 @@
 require 'spec_helper'
+__END__
 
 describe CommentsController do
   before { @blog = Blog.create!(title: 'title', body: 'body') }
