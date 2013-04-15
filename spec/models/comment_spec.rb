@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe Comment do
+describe Comment, comment: true do
   it 'should be creatable' do
     expect {
       Comment.create! name: 'Taro', body: 'Good news!, I ...'

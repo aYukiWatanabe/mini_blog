@@ -15,7 +15,7 @@ describe Blog do
     end
   end
 
-  describe '#comments' do
+  describe '#comments', comment: true do
     before { @blog = Blog.create! title: 'Hello everyone', body: 'Body' }
     subject { @blog }
 
