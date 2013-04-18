@@ -10,7 +10,7 @@ ja:
       edit: 編集する
       delete: 削除する
       anonymous: 誰か
-      said: '%{name}の発言:'
+      said: '%{name}さんの発言:'
   errors:
     x404:
       no_content: ページが見つかりません
