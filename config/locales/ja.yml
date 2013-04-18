@@ -11,3 +11,6 @@ ja:
       delete: 削除する
       anonymous: 誰か
       said: '%{name}の発言:'
+  errors:
+    x404:
+      no_content: ページが見つかりません

@@ -1,5 +1,6 @@
 class CommentsController < ApplicationController
 
+  # POST /blogs/:blog_id/comments
   def create
     raise NotImplementedError
 
@@ -10,14 +11,16 @@ class CommentsController < ApplicationController
     render 'blogs/show', status: 400
   end
 
+  # GET /blogs/:blog_id/comments/:id/edit
   def edit
-    raise NotImplementedError
     @blog    = nil
     @comment = nil
+    raise NotImplementedError
 
     render 'blogs/show'
   end
 
+  # PUT /blogs/:blog_id/comments/:id
   def update
     raise NotImplementedError
 
@@ -28,6 +31,7 @@ class CommentsController < ApplicationController
     render 'blogs/show', status: 400
   end
 
+  # DELETE /blogs/:blog_id/comments/:id
   def destroy
     raise NotImplementedError
 
