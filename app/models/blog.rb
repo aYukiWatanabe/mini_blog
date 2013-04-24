@@ -10,6 +10,6 @@ class Blog < ActiveRecord::Base
   # ----- ----- ----- ----- assocs ----- ----- ----- -----
 
   # see http://guides.rubyonrails.org/association_basics.html
-  # has_many :comments, order: 'created_at ASC', dependent: :destroy
+  has_many :comments, order: 'created_at ASC', dependent: :destroy
 
 end

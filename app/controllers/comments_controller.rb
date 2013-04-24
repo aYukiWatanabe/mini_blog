@@ -2,8 +2,8 @@ class CommentsController < ApplicationController
 
   # POST /blogs/:blog_id/comments
   def create
-    raise NotImplementedError
-
+    blog = Blog.find(params[:blog_id])
+    blog.comments.create!(params[:comment])
     redirect_to blog_path(blog)
   rescue ActiveRecord::RecordInvalid => e
     @comment = e.record
@@ -13,17 +13,16 @@ class CommentsController < ApplicationController
 
   # GET /blogs/:blog_id/comments/:id/edit
   def edit
-    @blog    = nil
-    @comment = nil
-    raise NotImplementedError
-
+    @blog = Blog.find(params[:blog_id])
+    @comment = @blog.comments.find(params[:id])
     render 'blogs/show'
   end
 
   # PUT /blogs/:blog_id/comments/:id
   def update
-    raise NotImplementedError
-
+    blog = Blog.find(params[:blog_id])
+    comment = blog.comments.find(params[:id])
+    comment.update_attributes!(params[:comment])
     redirect_to blog_path(blog)
   rescue ActiveRecord::RecordInvalid => e
     @comment = e.record
@@ -33,8 +32,9 @@ class CommentsController < ApplicationController
 
   # DELETE /blogs/:blog_id/comments/:id
   def destroy
-    raise NotImplementedError
-
+    blog = Blog.find(params[:blog_id])
+    comment = blog.comments.find(params[:id])
+    comment.destroy
     redirect_to blog_path(blog)
   end
 end
