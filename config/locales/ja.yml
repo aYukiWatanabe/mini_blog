@@ -14,3 +14,11 @@ ja:
   errors:
     x404:
       no_content: ページが見つかりません
+
+  views:
+    pagination:
+      first: 最初
+      previous: 前ページ
+      last: 最後
+      next: 次ページ
+      truncate: ...

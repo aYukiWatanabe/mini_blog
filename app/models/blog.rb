@@ -11,5 +11,4 @@ class Blog < ActiveRecord::Base
 
   # see http://guides.rubyonrails.org/association_basics.html
   has_many :comments, order: 'created_at ASC', dependent: :destroy
-
 end

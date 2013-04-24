@@ -4,12 +4,29 @@ describe BlogsController do
   describe '#index' do
     subject { get :index }
     it { should render_template(:index) }
+
+    describe 'pagination' do
+      before { 10.times{ Blog.create!(title: 'title', body: 'body') } }
+      specify {
+        per_page = 5
+        get :index, page: 2
+        expected = Blog.order('created_at DESC').offset(per_page * 1).limit(per_page)
+        assigns(:blogs).should == expected
+      }
+    end
   end
 
   describe '#show' do
     before { @blog = Blog.create!(title: 'title', body: 'body') }
     subject { get :show, id: @blog.id }
     it { should render_template(:show) }
+
+    describe 'invalid id' do
+      before { @blog = Blog.create!(title: 'title', body: 'body') }
+      subject { get :show, id: Blog.maximum(:id) + 1 }
+      it { should render_template('errors/x404') }
+      its(:status) { should == 404 }
+    end
   end
 
   describe '#new' do
