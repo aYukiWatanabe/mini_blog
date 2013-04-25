@@ -5,7 +5,6 @@ gem 'rails', '3.2.13'
 gem 'jquery-rails'
 gem 'rails-i18n'
 gem 'rspec-rails'
-gem 'kaminari'
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'

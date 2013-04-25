@@ -3,7 +3,7 @@ class BlogsController < ApplicationController
   # ----- ----- ----- ----- read ----- ----- ----- -----
 
   def index
-    @blogs = Blog.order('created_at DESC').page(params[:page]).per(5)
+    @blogs = Blog.order('created_at DESC')
   end
 
   def show
