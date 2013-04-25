@@ -16,5 +16,6 @@
         <div><%= link_to t('.continue'), blog_path(blog) %>
       </article>
     <% end %>
+    <%= paginate @blogs %>
   <% end %>
 </main>
