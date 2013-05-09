@@ -8,11 +8,15 @@ body { background-color: #363; }
   box-sizing: border-box;
   width: 640px;
   margin: auto;
-  padding: 20px;
+  padding: 10px 20px;
   min-height: 100%;
   @include box-shadow;
   color: #030;
   background-color: #fafafa;
+}
+
+#account {
+  text-align: right;
 }
 
 h1 {
@@ -99,6 +103,13 @@ form {
     textarea { height: 50px; }
   }
 }
+
+#new_user {
+  &>div {
+    margin: 10px;
+  }
+}
+
 #error_explanation {
   padding: 10px;
   border-radius: 2px;

@@ -2,7 +2,20 @@
 	"folders":
 	[
 		{
-			"path": "."
+			"path": ".",
+			"folder_exclude_patterns": [
+				"log",
+				".sass-cache",
+				".bundle",
+				"coverage",
+				"tmp"
+			],
+			"file_exclude_patterns": [
+				"*.sqlite3",
+				"*.log",
+				"*.min.js",
+				"*.sublime-workspace"
+			]
 		}
 	]
 }
