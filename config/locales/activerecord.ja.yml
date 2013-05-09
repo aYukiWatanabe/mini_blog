@@ -12,3 +12,8 @@ ja:
       comment:
         name: 投稿者
         body: 本文
+      user:
+        email: メールアドレス
+        password: パスワード
+        password_confirmation: パスワード (確認)
+        remember_me: 次回から自動でログイン
