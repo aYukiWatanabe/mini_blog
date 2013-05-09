@@ -4,6 +4,16 @@ describe BlogsController do
   describe '#index' do
     subject { get :index }
     it { should render_template(:index) }
+
+    describe 'pagination' do
+      before { 10.times{ Blog.create!(title: 'title', body: 'body') } }
+      specify {
+        per_page = 5
+        get :index, page: 2
+        expected = Blog.order('created_at DESC').offset(per_page * 1).limit(per_page)
+        assigns(:blogs).should == expected
+      }
+    end
   end
 
   describe '#show' do
