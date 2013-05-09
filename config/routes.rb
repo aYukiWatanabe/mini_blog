@@ -1,4 +1,6 @@
 MiniBlog::Application.routes.draw do
+  devise_for :users
+
   # seee http://guides.rubyonrails.org/routing.html
 
   root to: redirect('/blogs')
