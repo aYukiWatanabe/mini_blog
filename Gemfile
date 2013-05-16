@@ -10,6 +10,7 @@ gem 'devise'
 gem 'devise-i18n'
 gem 'rails_admin'
 gem 'rails_admin-i18n'
+gem 'cancan'
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
