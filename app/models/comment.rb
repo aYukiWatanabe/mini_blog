@@ -9,5 +9,5 @@ class Comment < ActiveRecord::Base
   belongs_to :blog
 
   # ----- ----- ----- ----- scopes ----- ----- ----- -----
-  scope :visible, where(:visible => true)
+  scope :visible, where(visible: true)
 end
