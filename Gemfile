@@ -8,6 +8,7 @@ gem 'rspec-rails'
 gem 'kaminari'
 gem 'devise'
 gem 'devise-i18n'
+gem 'rails_admin'
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
