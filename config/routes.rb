@@ -1,4 +1,6 @@
 MiniBlog::Application.routes.draw do
+  mount RailsAdmin::Engine => '/admin', :as => 'rails_admin'
+
   # seee http://guides.rubyonrails.org/routing.html
 
   root to: redirect('/blogs')
