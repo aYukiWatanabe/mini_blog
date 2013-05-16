@@ -1,5 +1,7 @@
 class BlogsController < ApplicationController
 
+  before_filter :authenticate_user!, except: %w(index show)
+
   # ----- ----- ----- ----- read ----- ----- ----- -----
 
   def index

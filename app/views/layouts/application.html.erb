@@ -8,6 +8,14 @@
   <%= yield :head %>
 <body>
   <div id="wrapper">
+    <div id="account">
+      <% if user_signed_in? %>
+        <%= current_user.email %>
+        <%= link_to t(:sign_out, scope: 'views.application'), destroy_user_session_path, method: 'delete' %>
+      <% else %>
+        <%= link_to t(:sign_in, scope: 'views.application'), new_user_session_path %>
+      <% end %>
+    </div>
     <h1><a href="/">Mini Blog</a></h1>
     <%= yield %>
     <%= javascript_include_tag 'application' %>

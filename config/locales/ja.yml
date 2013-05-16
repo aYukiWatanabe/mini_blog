@@ -22,3 +22,6 @@ ja:
       last: 最後
       next: 次ページ
       truncate: ...
+    application:
+      sign_in: ログイン
+      sign_out: ログアウト

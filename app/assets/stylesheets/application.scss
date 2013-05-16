@@ -18,6 +18,10 @@ body { background-color: #363; }
   text-align: right;
 }
 
+#account {
+  text-align: right;
+}
+
 h1 {
   margin: 0;
   text-align: center;
@@ -102,6 +106,7 @@ form {
     textarea { height: 50px; }
   }
 }
+
 #new_user {
   &>div {
     margin: 10px;
